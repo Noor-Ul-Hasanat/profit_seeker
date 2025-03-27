@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+  <background android:drawable="@mipmap/profit_seeker_background"/>
+  <foreground android:drawable="@mipmap/profit_seeker_foreground"/>
+  <monochrome android:drawable="@mipmap/profit_seeker_monochrome"/>
+</adaptive-icon>
