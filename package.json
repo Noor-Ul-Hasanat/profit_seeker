@@ -12,7 +12,9 @@
   "dependencies": {
     "react": "19.0.0",
     "react-native": "0.78.1",
-    "react-native-splash-screen": "^3.3.0"
+    "react-native-splash-screen": "^3.3.0",
+    "react-native-vector-icons": "^10.2.0",
+    "tailwind-react-native-classnames": "^1.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
