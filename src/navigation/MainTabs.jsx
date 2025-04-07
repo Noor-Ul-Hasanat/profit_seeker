@@ -1,7 +1,7 @@
 // import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 // import Dashboard from '../screens/Dashboard';
 // import Scanner from '../screens/Scanner';
-// import Products from '../screens/Products';
+// import Products from '../screens//Products';
 
 // const Tab = createBottomTabNavigator();
 

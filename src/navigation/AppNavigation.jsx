@@ -1,8 +1,8 @@
-// import { createStackNavigator } from '@react-navigation/stack';
+// import { createNativeStackNavigator } from '@react-navigation/native-stack';
 // import AuthStack from './AuthStack';
 // import MainTabs from './MainTabs';
 
-// const Stack = createStackNavigator();
+// const Stack = createNativeStackNavigator();
 
 // export default function AppNavigator() {
 //   return (
@@ -11,4 +11,4 @@
 //       <Stack.Screen name="Main" component={MainTabs} />
 //     </Stack.Navigator>
 //   );
-// };
+// }
