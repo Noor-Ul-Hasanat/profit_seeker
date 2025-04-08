@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import tw from 'tailwind-react-native-classnames';
 import Icon from 'react-native-vector-icons/FontAwesome';
-function SignUp() {
+function SignUp({navigation}) {
      const [email, setEmail] = useState('');
       const [password, setPassword] = useState('');
       const [showPassword, setShowPassword] = useState(false);
@@ -67,7 +67,10 @@ function SignUp() {
 
       {/* Sign In Button */}
       <TouchableOpacity style={tw`bg-blue-500 py-3 rounded-full mt-12`}>
-        <Text style={tw`text-white text-center  text-lg`}>SIGN IN</Text>
+        <Text style={tw`text-white text-center  text-lg`}
+         onPress={() =>
+          navigation.navigate('Main')
+        }>SIGN Up</Text>
       </TouchableOpacity>
 
       {/* Sign Up Link */}

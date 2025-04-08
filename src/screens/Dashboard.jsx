@@ -6,8 +6,8 @@ const Dashboard = () => {
     return (
         <View style={tw`bg-white rounded-lg shadow-lg h-full p-6`}>
           {/* Header Section */}
-          <View style={tw`mb-6 flex justify-center items-center`}>
-            <Image source={picture} style={tw`w-20 h-20 rounded-full mb-4`} />
+          <View style={tw`mb-6 flex justify-center items-center mt-8`}>
+            <Image source={picture} style={tw`w-28 h-28 rounded-full mb-4 `} />
             <Text style={tw`text-lg font-bold`}>Muhammad Mustafa</Text>
           </View>
 

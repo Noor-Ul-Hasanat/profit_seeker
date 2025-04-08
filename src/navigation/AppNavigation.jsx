@@ -1,14 +1,15 @@
-// import { createNativeStackNavigator } from '@react-navigation/native-stack';
-// import AuthStack from './AuthStack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import AuthStack from './AuthStack';
+import MainTabs from './MainTabs';
 // import MainTabs from './MainTabs';
 
-// const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator();
 
-// export default function AppNavigator() {
-//   return (
-//     <Stack.Navigator screenOptions={{ headerShown: false }}>
-//       <Stack.Screen name="Auth" component={AuthStack} />
-//       <Stack.Screen name="Main" component={MainTabs} />
-//     </Stack.Navigator>
-//   );
-// }
+export default function AppNavigator() {
+  return (
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Auth" component={AuthStack} />
+      <Stack.Screen name="Main" component={MainTabs} />
+    </Stack.Navigator>
+  );
+}
