@@ -1,202 +1,119 @@
 import React from 'react';
-import { View, Text, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity, Image, TextInput } from 'react-native';
+import tw from 'tailwind-react-native-classnames';
+import picture from '../assets/product1.jpg';
 
 const ProductDetail = () => {
-  // Sample data
   const offers = [
     { new: 523, used: 415, fba: 615 },
+    { new: 525, used: 417, fba: 627 },
     { new: 525, used: 417, fba: 627 }];
 
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView style={tw`bg-gray-50 p-4`}>
       {/* Product Header */}
-      <View style={styles.section}>
-        <Text style={styles.title}>
+      <View style={tw`w-full mb-6 flex-row`}>
+        <View style={tw`w-2/5 flex justify-center items-center`} >
+          <Image source={picture} style={tw`w-32 h-32  rounded-lg shadow-lg`} />
+          <Text style={tw`text-yellow-600`}>UID 09237562527</Text>
+        </View>
+      <View style={tw`w-3/5 ml-2`}>
+        <Text style={tw`text-md font-bold text-gray-800 mb-2`}>
           HP 15.6 inch Windows Laptop Intel Core i7-N305 8GB RAM 256GB SSD Natural Silver
         </Text>
-        <View style={styles.details}>
-          <Text style={styles.detailText}>UPC: 8025792823972197</Text>
-          <Text style={styles.detailText}>Dimensions (L x W x H): 11 × 2201 × 10.98 inches</Text>
-          <Text style={styles.price}>Price: $592.00</Text>
+        <View style={tw`space-y-1`}>
+          <Text style={tw`text-sm text-gray-600 font-bold`}>UPC: <Text style={tw`text-yellow-600`}>8025792823972197</Text></Text>
+          <Text style={tw`text-sm text-gray-600 font-bold text-xs`}>Dimensions (L x W x H):</Text>
+          <Text style={tw`text-sm text-yellow-600`}>11 × 2201 × 10.98 inches</Text>
+          <Text style={tw`text-xl font-bold mt-2`}>Price:<Text style={tw`text-yellow-600`}> $592.00</Text></Text>
         </View>
+      </View>
       </View>
 
       {/* WFS Calculator */}
-      <View style={[styles.section, styles.card]}>
-        <Text style={styles.sectionTitle}>WFS Calculator</Text>
-        <View style={styles.grid}>
-          {[
-            ['Dimension', '7.41', 'In', 'Referral Fees', '$5.29'],
-            ['Unit Weight', '5.32', 'LD', 'Fulfillment Fees', '$5.77'],
-            ['Selling Price', '61.98', '$', 'Storage Fee', '$0.37'],
-            ['Buy Cost', '30.35', '$', 'Net Profit', '$28.80'],
-            ['Inbound Shipping', '0.50', '$', 'Net Margin RXN', '68.60%']].map((row, index) => (
-            <View key={index} style={styles.gridRow}>
-              <Text style={styles.gridLabel}>{row[0]}</Text>
-              <Text style={styles.gridValue}>{row[1]}</Text>
-              <Text style={styles.gridUnit}>{row[2]}</Text>
-              <Text style={styles.gridLabel}>{row[3]}</Text>
-              <Text style={styles.gridValue}>{row[4]}</Text>
-            </View>
-          ))}
+      <View style={tw`bg-white p-4 border border-blue-400 rounded-lg mb-6 w-full`}>
+        <Text style={tw`text-lg font-bold mb-4 text-yellow-600 border-b border-blue-400 `}>WFS Calculator</Text>
+        <View style={tw` w-full flex-row`}>
+          {/* Left */}
+          <View style={tw`w-1/2`}>
+          {/* Left-left */}
+         
+         <View style={tw`flex-row justify-between`}>
+         <Text style={tw`text-xs text-gray-600 mb-3 self-center`}>Dimensions  </Text>
+         <TextInput style={tw`text-xs text-gray-600 border border-black px-3 py-2  mb-2 rounded-md`}>7.14 In</TextInput>
+         </View>
+         <View style={tw`flex-row justify-between`}>
+         <Text style={tw`text-xs text-gray-600 mb-3 self-center`}>Unit Weight </Text>
+         <TextInput style={tw`text-xs text-gray-600 border border-black px-3 py-2 mb-2 rounded-md`}>5.32 lb</TextInput>
+         </View>
+         <View style={tw`flex-row justify-between`}>
+         <Text style={tw`text-xs text-gray-600 mb-3 self-center`}>Selling Price</Text>
+         <TextInput style={tw`text-xs text-gray-600 border border-black px-3 py-2  mb-2 rounded-md`}>22.03 $</TextInput>
+         </View>
+         <View style={tw`flex-row justify-between`}>
+         <Text style={tw`text-xs text-gray-600 mb-3 self-center`}>Buy Cost </Text>
+         <TextInput style={tw`text-xs text-gray-600 border border-black px-3 py-2  mb-2 rounded-md`}>30.00 $</TextInput>
+         </View>
+         <View style={tw`flex-row justify-between`}>
+         <Text style={tw`text-xs text-gray-600 mb-3 self-center`}>Shipping</Text>
+         <TextInput style={tw`text-xs text-gray-600 border border-black px-3 py-2  mb-2 rounded-md`}>22.12 $</TextInput>
+         </View>
+          </View>
+
+          {/* Right */}
+          <View style={tw`w-1/2 ml-2`}>
+          {/* Upper */}
+        <View >
+         <View style={tw`flex-row justify-between mx-2`}> <Text style={tw`text-xs text-gray-600 mb-3 `}>Referral fees  </Text><Text style={tw`text-yellow-600`}>$5.29</Text> </View>
+         <View style={tw`flex-row justify-between mx-2`}> <Text style={tw`text-xs text-gray-600 mb-3 `}>Fulfilment fees  </Text><Text style={tw`text-yellow-600`}>$5.77</Text></View>
+         <View style={tw`flex-row justify-between mx-2`}> <Text style={tw`text-xs text-gray-600 mb-3 `}>Storage fees  </Text><Text style={tw`text-yellow-600`}>$2.03</Text></View>
+          </View>
+          {/* Lower */}
+          <View style={tw`bg-blue-400 py-4  rounded-lg `}>
+         <View style={tw`flex-row justify-between mx-2 `}> <Text style={tw`text-xs text-gray-600 mb-3 text-white`}>Net Profit  </Text><Text style={tw`text-white `}>$5.29</Text> </View>
+         <View style={tw`flex-row justify-between mx-2 `}> <Text style={tw`text-xs text-gray-600 mb-3 text-white`}>Net Margin  </Text><Text style={tw`text-white `}>$5.77</Text></View>
+         <View style={tw`flex-row justify-between mx-2 `}> <Text style={tw`text-xs text-gray-600 mb-3 text-white`}>ROI  </Text><Text style={tw`text-white `}>$2.03</Text></View>
+          </View>
+          </View>
+
         </View>
       </View>
 
       {/* Offers Section */}
-      <View style={[styles.section, styles.card]}>
-        <Text style={styles.sectionTitle}>4 Offers</Text>
-        <View style={styles.table}>
-          <View style={styles.tableHeader}>
-            <Text style={styles.headerText}>New</Text>
-            <Text style={styles.headerText}>Used</Text>
-            <Text style={styles.headerText}>FBA</Text>
+      <View style={tw`bg-white  rounded-lg border border-blue-500 mb-6 flex-row justify-between`}> `
+        <TouchableOpacity style={tw`text-lg font-semibold  text-blue-500 border-r border-blue-400`}><Text style={tw`text-blue-400 py-3 px-4 font-bold text-md`}>4 Offers</Text></TouchableOpacity>
+        <TouchableOpacity style={tw`text-lg font-semibold  text-blue-500 `}><Text style={tw`text-blue-400 py-3 px-4 font-bold text-md`}>Profitability</Text></TouchableOpacity>
+        <TouchableOpacity style={tw`text-lg font-semibold  text-blue-500 border-l border-blue-400`}><Text style={tw`text-blue-400 py-3 px-4 font-bold text-md`}>History</Text></TouchableOpacity>
+      </View>
+
+        {/* Offers Table */}
+        <View>
+        <View style={tw`border border-blue-400 rounded-xl`}>
+          <View style={tw`flex flex-row bg-gray-100 justify-between rounded-t-xl`}>
+            <Text style={tw`flex-1 font-semibold  border-r border-blue-400 text-center py-2`}>New</Text>
+            <Text style={tw`flex-1 font-semibold text-center py-2`}>Used</Text>
+            <Text style={tw`flex-1 font-semibold  border-l border-blue-400 text-center py-2`}>FBA</Text>
           </View>
           {offers.map((offer, index) => (
-            <View key={index} style={styles.tableRow}>
-              <Text style={styles.cell}>${offer.new}</Text>
-              <Text style={styles.cell}>${offer.used}</Text>
-              <Text style={styles.cell}>${offer.fba}</Text>
+            <View key={index} style={tw`flex flex-row justify-between `}>
+              <Text style={tw`flex-1 font-semibold  border-r border-t border-blue-400 text-center py-2 `}>${offer.new}</Text>
+              <Text style={tw`flex-1 font-semibold text-center py-2 border-t border-blue-400`}>${offer.used}</Text>
+              <Text style={tw`flex-1 font-semibold  border-l border-t border-blue-400 text-center py-2`}>${offer.fba}</Text>
             </View>
           ))}
         </View>
 
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.primaryButton}>
-            <Text style={styles.buttonText}>ADD</Text>
+        {/* Buttons */}
+        <View style={tw`flex-row   mb-6 mt-3 `}>
+          <TouchableOpacity style={tw`bg-blue-400 py-2 px-3 rounded-3xl flex-1 items-center  mr-2`}>
+            <Text style={tw`text-white font-semibold`}>ADD</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.secondaryButton}>
-            <Text style={styles.buttonText}>SEARCH</Text>
+          <TouchableOpacity style={tw`bg-yellow-600 py-2 px-3 rounded-3xl flex-1 items-center `}>
+            <Text style={tw`text-white font-semibold`}>SEARCH</Text>
           </TouchableOpacity>
         </View>
       </View>
     </ScrollView>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#f7fafc',
-    padding: 16,
-  },
-  section: {
-    marginBottom: 24,
-  },
-  card: {
-    backgroundColor: 'white',
-    borderRadius: 8,
-    padding: 16,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#1a202c',
-    marginBottom: 12,
-  },
-  details: {
-    gap: 8,
-  },
-  detailText: {
-    fontSize: 14,
-    color: '#4a5568',
-  },
-  price: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#38a169',
-    marginTop: 8,
-  },
-  sectionTitle: {
-    fontSize: 18,
-    fontWeight: '600',
-    color: '#2d3748',
-    marginBottom: 16,
-  },
-  grid: {
-    gap: 12,
-  },
-  gridRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  gridLabel: {
-    flex: 2,
-    fontSize: 14,
-    color: '#4a5568',
-  },
-  gridValue: {
-    flex: 1,
-    fontSize: 14,
-    fontWeight: '500',
-    color: '#2d3748',
-    textAlign: 'right',
-  },
-  gridUnit: {
-    flex: 1,
-    fontSize: 14,
-    color: '#718096',
-    textAlign: 'center',
-  },
-  table: {
-    marginBottom: 16,
-  },
-  tableHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    backgroundColor: '#edf2f7',
-    padding: 12,
-    borderRadius: 6,
-    marginBottom: 8,
-  },
-  headerText: {
-    flex: 1,
-    fontWeight: '600',
-    color: '#2d3748',
-  },
-  tableRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingVertical: 12,
-    borderBottomWidth: 1,
-    borderBottomColor: '#e2e8f0',
-  },
-  cell: {
-    flex: 1,
-    fontSize: 14,
-    color: '#4a5568',
-  },
-  buttonContainer: {
-    flexDirection: 'row',
-    gap: 16,
-    marginTop: 16,
-  },
-  primaryButton: {
-    backgroundColor: '#4299e1',
-    paddingVertical: 12,
-    paddingHorizontal: 24,
-    borderRadius: 6,
-    flex: 1,
-  },
-  secondaryButton: {
-    backgroundColor: '#e2e8f0',
-    paddingVertical: 12,
-    paddingHorizontal: 24,
-    borderRadius: 6,
-    flex: 1,
-  },
-  buttonText: {
-    color: 'white',
-    fontWeight: '600',
-    textAlign: 'center',
-  },
-});
-
 export default ProductDetail;
-
-

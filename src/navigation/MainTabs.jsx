@@ -58,7 +58,7 @@ export default function MainTabs() {
       tabBarActiveTintColor: 'white', // Active tab text/icon color
       tabBarInactiveTintColor: 'rgba(255,255,255,0.6)', // Inactive tab color
       tabBarStyle: {
-        backgroundColor: 'rgb(74, 74, 240)', // Tab bar background color
+        backgroundColor: 'rgb(107, 170, 252)', // Tab bar background color
         borderTopWidth: 0, // Remove top border
         height: 60, // // Tab bar height
       },
@@ -67,7 +67,7 @@ export default function MainTabs() {
       headerShown: true,
       headerTintColor: '#ffffff', // Back button and title color
       headerStyle: {
-        backgroundColor: 'rgb(74, 74, 240)',
+        backgroundColor: 'rgb(107, 170, 252)',
         elevation: 0, // Remove shadow on Android
         shadowOpacity: 0, // Remove shadow on iOS
       },
