@@ -8,7 +8,7 @@ const Scanner = () => {
         <View style={tw` bg-white justify-center items-center px-6 h-full`}>
           {/* Scan Button */}
           <TouchableOpacity
-            style={tw`bg-blue-700 px-6 py-3 rounded-full mb-6 items-center flex-row w-2/4 justify-center`}
+            style={tw`bg-blue-400 px-6 py-3 rounded-full mb-6 items-center flex-row w-2/4 justify-center`}
             onPress={() => console.log('Scan pressed')}
           >
           <Icon name="barcode-scan" size={24} color="#fff" />
@@ -24,7 +24,7 @@ const Scanner = () => {
 
           {/* Search Button */}
           <TouchableOpacity
-            style={tw`bg-blue-700 px-6 py-3 rounded-full items-center w-2/4 justify-center`}
+            style={tw`bg-blue-400 px-6 py-3 rounded-full items-center w-2/4 justify-center`}
             onPress={() => console.log('Search pressed')}
           >
             <Text style={tw`text-white `}>SEARCH</Text>
